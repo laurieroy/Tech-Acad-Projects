@@ -1,0 +1,26 @@
+/* CSS for pizza.html practice website. Most of the CSS is either inline or the bootstrap default formatting, and not be overridden with css here. */
+	
+/* #deb887	background-image: url('./images/red_gingham.PNG') repeat; i know this lacks pizazz but I don't want to take time to find images that are copyright free, etc. */
+
+
+#staticMenu {
+	background: #d2b48c; 
+}
+
+.dynamicMenu {
+	  background: linear-gradient(gray, white);
+}
+
+.panel-body {
+	background:#333;
+	color: #fff;
+}
+
+.panel-heading {
+	background:#838b8b;
+}
+
+.panel-footer {
+	background:#c1cdcd;
+}
+

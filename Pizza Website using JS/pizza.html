@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<!-- This is a project to show how to order pizza using radio buttons to select ingredients and size, and to submit order as a form. 
+		A receipt is returned to the screen, itemizing order and fees. Using several sections of the example code for now.
+		Final project of the JS course, Tech Academy. Laurie Roy, July-Aug 2017 --> 
+	      <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		  
+	   <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Other CSS -->
+		<link rel="stylesheet" href="./css/pizza.css"> 
+	<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<title>Order Pizza from People's Pizza</title>
+	
+	</head>
+	<body>
+		
+		<!-- Right now I see this going two ways, either launch an interactive form as a different screen, or just the form itself.
+		button to launch interactive ordering e.g., order pizza online! button  ****************
+		Find image of pizza going into oven on board, use board or such as background. Or a nice muted tan.
+		
+	
+		-->
+		<div class="container">
+			<div  class="Menu" style="text-align:center;padding:30px 0 30px 0;" >
+				<div style="margin:auto;width:75"></p>
+					<div id="staticMenu">
+						<h6><br>People's Pizza offers three styles of pizza each unique in its blend of crust, cheese and sauce.<br>
+							Add toppings to your taste when ordering any pizza style.</h6>
+						<hr class="dotted">
+						<br>
+						<h1> <strong>Our Menu Options: </strong> </h1><br><br>	
+						</br></p>
+	<!-- Menu descriptions here  ------ 	<h2> <strong> </strong></h2><br>    --------------------------------------------------------------->
+
+						<h2> <strong> Sizes Available :  </h2></strong><br><br>
+						<table>
+							<tbody>
+								<tr>
+									<td></td>
+									<td>Personal <br>(8&#8243)  </td>
+									<td>Medium <br>(12&#8243)  </td>
+									<td>Large <br>(16&#8243)  </td>
+									<td>XLarge <br>(20&#8243)  </td>
+								</tr>
+								<tr>
+									<td>Cheese Only</td>
+									<td>6.00</td>
+									<td>10.00</td>
+									<td>14.00</td>
+									<td>16.00</td>
+								</tr>
+								<tr>
+									<td>1st Meat &/or Veggie choice</td>
+									<td>6.00</td>
+									<td>10.00</td>
+									<td>14.00</td>
+									<td>16.00</td>
+								</tr>
+								<tr>
+									<td>2d Additional Item </td>
+									<td>7.00</td>
+									<td>11.00</td>
+									<td>15.00</td>
+									<td>17.00</td>
+								</tr>
+								<tr>
+									<td>Each extra Topping</td>
+									<td>1.00</td>
+									<td>1.00</td>
+									<td>1.00</td>
+									<td>1.00</td>
+								</tr>		
+								<tr>
+									<td>Extra cheese</td>
+									<td>3.00</td>
+									<td>3.00</td>
+									<td>3.00</td>
+									<td>3.00</td>
+								</tr>
+							</tbody>
+						</table>
+						</strong></h2><br>
+<!-- Crust Choices: -->
+						<h2> <strong> Crust Choices: </strong></h2><br>
+							
+						<h4>Traditional Hand-Tossed (Plain)</h4>
+						<p>A traditional yeast risen bread crust. <br>
+						<hr class="dotted"/></p>
+						<h4>Garlic Butter Crust</h4>
+						<p>Out traditional crust glazed with garlic butter.<br>
+						<hr class="dotted"/></p>
+						<h4>Cheese Stuffed Crust</h4>
+						<p>Our traditional crust with a layer of mozzarella melted inside the crust. +$3 for any size pizza. <br>
+						<hr class="dotted"/></p>
+						<h4>Spicy Crust</h4>
+						<p>Our traditional crust with traditional Italian spices mixed into the crust.<br>
+						<hr class="dotted"/></p>
+						<h4>House Special Crust</h4>
+						<p>Our traditional crust topped with a blend of parmesan, garlic, and onion.</p>
+							
+						<hr class="dotted"/></p>
+						<h2> <strong>Pizza Toppings: </strong></h2><br>														<!-- justify left -->
+						<h4>First meat and first veggie choices are complimentry. <p>Add  $1.00 for each additional topping (meat or veggie, any size). </h4>
+						<p>pepperoni  • sausage  • chicken  • canadian bacon • ground beef • anchovy  <br>
+						<p>black olive   • green pepper    • onion  • tomato • mushroom • spinach  • jalapeños • pineapple  <br><br>
+					</div>   
+					<hr class="dotted">
+<!-- Form   Replace with modal -->		
+					<div class="dynamicMenu">  	
+<!--size section -->
+						<form id="getSize">
+							<div class="form-group" "size_sel">								
+								<h2><br><strong>Size Selection:</strong></h2><br>
+								<label class="radio-inline"><input type="radio" name="getSize" value="Personal Pizza" checked> Personal Pan--8" </label>  <!-- tool tips describing these -->
+							
+								<label class="radio-inline"><input type="radio" name="getSize" value="Medium Pizza"> Medium--12" </label>
+							
+								<label class="radio-inline"><input type="radio" name="getSize" value="Large Pizza"> Large--16" </label>
+							
+								<label class="radio-inline"><input type="radio" name="getSize" value="Extra Large Pizza"> XL--20"</label>
+						
+								<br><br>
+							</div>
+						</form>
+<!--/ size  section -->
+<!-- crust section -->
+						<form id="crustType">			
+							<div class ="crust_sel">	
+								<h2><br><strong>Crust Choice: </strong></h2><br>				
+						
+								<label class="radio-inline_crust"><input type="radio" name="crustType" id=crustType1" value="Traditional" checked> Traditional </label>
+								<label class="radio-inline_crust"><input type="radio" name="crustType" id=crustType2" value="Garlic Butter"> Garlic Butter </label>
+								<label class="radio-inline_crust"><input type="radio" name="crustType" id=crustType3" value="Cheese Stuffed"> Cheese-stuffed ($3 extra) </label>
+								<label class="radio-inline_crust"><input type="radio" name="crustType" id=crustType4" value="Spicy"> Spicy </label>
+								<label class="radio-inline_crust"><input type="radio" name="crustType" id=crustType5" value="House Special"> House Special </label>
+							</div>
+						</form> 
+					<br><br>
+						<form id="sauceType">	
+							<div>
+								<h2><br><strong>Sauce Choice: </strong></h2><br><br>
+		<!-- BS Radio button sauce -->
+								<label class="radio-inline_sauce"><input type="radio" name="sauceType" id="saucetype1" value="Marinara"checked> Marinara</label>  <!-- tool tips describing these -->
+								<label class="radio-inline_sauce"><input type="radio" name="sauceType" id="saucetype2" value="White"> White</label>
+								<label class="radio-inline_sauce"><input type="radio" name="sauceType" id="saucetype3" value="BBQ"> BBQ</label>
+								<label class="radio-inline_sauce"><input type="radio" name="sauceType" id="saucetype4" value="No sauce"> No sauce</label>
+								<br><br>
+							</div>
+							<p>
+						</form>						
+	<!--/ Sauce section -->
+
+	<!--Toppings section -->
+		<!-- bootstrap  Forms Inline checks -->
+						<div ="toppings">
+							<div>
+								<br><h2> <strong>Pizza Toppings: </strong></h2><br>
+								<h4>Select items to include on pizza. Click again to deselect. Click button at bottom to place order. </h4>
+									<form id="toppings_meat">
+									<br><h2><br><strong>Meats:</strong></h2><br><p>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" name="toppings_meat" id="toppings_meat1" value=" pepperoni"> Pepperoni
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" name="toppings_meat" id="toppings_meat2" value=" sausage"> Sausage
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" name="toppings_meat" id="toppings_meat3" value=" chicken"> Chicken
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" name="toppings_meat" id="toppings_meat4" value=" canadian bacon"> Canadian bacon
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" name="toppings_meat" id="toppings_meat5" value=" ground beef">  Ground beef
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" name="toppings_meat" id="toppings_meat6" value=" anchovy"> Anchovy
+										  </label>
+										</div>
+										<br><br>
+									</form>
+									<form id="toppings_veg">
+
+										<h2><br><strong>Veggies:</strong></h2><br><p>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox7" value=" black olive">  Black olive
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox8" value=" mushroom"> Mushroom
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox9" value=" green pepper"> Green pepper
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox10" value=" onion"> Onion
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox11" value=" tomato"> Tomato
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox12" value=" spinach"> Spinach
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox13" value=" jalapeno"> Jalapeno
+										  </label>
+										</div>
+										<div class="form-check form-check-inline">
+										  <label class="form-check-label">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox14" value=" pineapple"> Pineapple
+										  </label>
+										</div>	
+									</form>
+								<br><br>
+							
+						</div>
+	<!-- /Toppings section -->
+<!--cheese  section -->
+						<form id="cheeseType">
+							<div="cheese_sel">
+								<br><h2><strong>Cheese Selection:</h2></strong>
+								<p>Cheese is 100% natural mozzarella<p>
+								<label class="radio-inline"><input type="radio" name="cheeseType" id="cheeseType1" value="Regular cheese" checked> Regular cheese </label>  <!-- tool tips describing these -->
+								<label class="radio-inline"><input type="radio" name="cheeseType" id="cheeseType2" value="Extra cheese"> Extra cheese  (+$3)</label>
+								<label class="radio-inline"><input type="radio" name="cheeseType" id="cheeseType3" value="No cheese"> No cheese  </label>
+							</div>			
+						</form>
+<!--/ cheese  section -->
+					</div>
+	<!-- BS button w/collapsible panel -->
+						<div class="container">
+							<p>
+							<button type="button" class="btn btn-danger" onclick="getOrder()" data-toggle="collapse" href="#receipt" aria-expanded="false" aria-controls="collapseReceipt">
+							Order Pizza!
+							</button>
+							 </p>
+	<!-- the collapse button <p>
+							  <a class="btn btn-primary" onclick="getOrder()" data-toggle="collapse" href="#receipt" aria-expanded="false" aria-controls="collapseReceipt">
+								Order Pizza!
+							  </button>
+							 </p>			-->
+	<!-- Panel showing the receipt. Initially hidden, collapsible.  min size 580 -->
+							<div id="receipt" class="collapse">
+								<div class="panel" >
+									<div class="panel-heading">
+										<div class="row">
+											<div class="col-sm-6 text-right">
+												<h3 class="panel-title">Your Order:</h3>	
+											</div>
+											<div class="col-sm-6 text-left">
+												<h3 class="panel-title">Fee for each:</h3>			
+											</div>
+										</div>
+									</div>
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-6 text-right">
+												<p>
+												<div id="showText1"></div>
+												</p>
+											</div>
+											<div class="col-sm-6 text-left">
+											<p>
+												<div id="showText2"></div>
+											</p></div>
+										</div>			
+									</div>
+											 
+									<div class="panel-footer">
+										<div class="row"> 
+											<div class="col-sm-6 text-right">
+												<div id="totalPrice1"><h3>Total Price:</h3></div>
+											</div>
+											<div class="col-sm-6 text-left"> 
+												<h3>
+												<div id="totalPrice2"></div>
+												</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>  
+		<!--  /receipt -->
+
+
+						</div> <!--container div -->
+					</div>  <!-- style div -->
+				</div> <!--menu div -->
+			</div> 			<!--container div -->
+	<!-- JS for this page. jQuery, tether, Bootstrap, mine -->
+	
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>		
+		<script src="pizza.js"></script> 
+	</body>
+</html>
+		
