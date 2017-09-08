@@ -1,5 +1,5 @@
 #!/usr/local/bin/python2.7
-def files24():
+def main():
     """Program moves text files modified in previous 24hrs to another directory."""
         # **************************************************************************************
         # Python:   2.7.13
@@ -31,8 +31,9 @@ def files24():
     import glob
     import datetime
     import pytz
-    
-    def main():
+
+    def files24():
+   
         status = 0
         
     source = 'c:/Users/Student/Desktop/Folder A'
@@ -75,5 +76,5 @@ def files24():
     #print "The contents of ", source, 'are now: \n', os.listdir(source)
     print "The contents of ", destination, 'are now: \n', os.listdir(destination)
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
