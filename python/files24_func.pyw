@@ -39,7 +39,7 @@ def Get_fileInfo(self):
     file_age = datetime.timedelta(hours=hrs)
     file_type = self.txt_fileType.get()
     messagebox.showinfo(title="Run select source again.", message = "After updating file type or hours, please select source again to update file selection.")
- 
+    return(file_age, file_type, hrs)
    
 def Get_Source(self): 
     """Get path to source directory, generate filelist."""
@@ -60,7 +60,8 @@ def Get_Source(self):
     for f in glob.iglob(os.path.join(source, file_type)):
         files_list = [os.path.splitext(f)[0]]
         filenames_list.append(f) 
-       
+    return(filenames_list, source, files_list)
+
 def clean_file(filesnames_list, file_type):  # so now not needed.
     """Clean out char from s."""
     global files_list
@@ -81,6 +82,7 @@ def Get_Dest(self):
     destination = destination_directory
     self.txt_destPath.delete(0, 'end')
     self.txt_destPath.insert(0, str(destination_directory))
+    return (destination)
 
 def create_db(self):
     with sqlite3.connect('fileTransfer.db') as connection:
