@@ -4,7 +4,7 @@
 # Python:   3.6.2
 # Filename: UI_xferFiles24.py  Daily File Transfer scripting project
 # Author:   Laurette Roy
-# Purpose: Drill 6, PyDrill_gui_34_idle
+# Purpose: Drill 7, PyDrill_gui_34_idle
 #           Title: UI for File Transfer project - Python 3.4 - IDLE
 #       Scenario: You recently created a script that will check a folder for new or modified files,
 #       and then copy those new or modified files to another location.
@@ -21,7 +21,7 @@
 #       Guidelines:
 #       - Use Python 3.4 for this drill.    - Use sqlite for your database functionality.
 #       - Use tkinter to create the UI.     - The layout of the UI is up to you.
-# Platforms tested: Win7, Mac OS 10 (Sierra). Works but display is slightly off      
+# Platforms tested: Win7, (Mac OS X (Sierra)- Works but display is slightly off )    
 # ******************************************************************************
 from tkinter import *
 from tkinter import ttk, messagebox, filedialog
