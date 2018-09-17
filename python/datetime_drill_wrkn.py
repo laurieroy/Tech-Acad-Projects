@@ -13,7 +13,7 @@
 # London branches, then compare that time with the branches hours to see if they are open or closed.
 # Guildlines: -Use Python 2.7 IDLE -Use Datetime Module -Execute program on the Shell
 # Assumption: User of this application is at HQ in Portland ((later can make input for other timezones))
-# Note: London uses British Sumer TIme, which begins at 01:00 GMT on the last Sunday of March and ends at 01:00 GMT (02:00 BST)
+# Note: London uses British Summer Time, which begins at 01:00 GMT on the last Sunday of March and ends at 01:00 GMT (02:00 BST)
 # on the last Sunday of October.        ** use aware, be sure it accounts for it **
 import datetime
 import pytz
