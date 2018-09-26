@@ -7,6 +7,8 @@ I also did not commit as often as I should have in the early days, so many proje
 
 Some sample projects learning web development at the Tech Academy.
 
+My troubleshooting method to research new concepts or issues with my code was to use MDN, the documentation at microsoft, python, etc., stack overflow, w3schools and general googling to research the problem. I would then play around with various examples and when I understood it and how it worked, would incorporate it into my code. My biggest struggle was with the concept of "good enough" and after spending a certain amount of time with research to ask an instructor or look at someone else's code to see how they did it.
+
 ** updates in progress **
 ## Front-End (HTML/CSS/JS):
 [Landing Page]
@@ -22,3 +24,4 @@ python:
 
 ## Full-Stack
 c# / ASP.NET / MVC
+
